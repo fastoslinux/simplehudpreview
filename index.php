@@ -248,6 +248,7 @@ HORIZONTAL;}
 <head>
     <meta charset="UTF-8">
     <title>Simple HUD</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 40px;">
@@ -283,20 +284,22 @@ HORIZONTAL;}
 
     </form>
 
-    <p style="margin-top: 20px;">
+   
+
+
+    <?php if ($show_preview): ?>
+        <div class="layoutpreview">
+            <h3>Layout Preview:</h3>
+            <img src="<?php echo $preview_image; ?>" alt="Layout Preview" style="max-width: 100%; height: auto;">
+        </div>
+    <?php endif; ?>
+
+    <p class="note">
         <strong>Note:</strong> After downloading the <code>MangoHud.conf</code> file, place it in the following folder:<br>
         <code>~/.config/MangoHud/</code><br>
         For example:<br>
         <code>/var/home/myuser/.config/MangoHud/MangoHud.conf</code>
     </p>
-
-
-<?php if ($show_preview): ?>
-    <div style="margin-top: 30px;">
-        <h3>Layout Preview:</h3>
-        <img src="<?php echo $preview_image; ?>" alt="Layout Preview" style="max-width: 100%; height: auto;">
-    </div>
-<?php endif; ?>
 
 </body>
 
